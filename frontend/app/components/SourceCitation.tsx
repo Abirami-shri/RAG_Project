@@ -10,34 +10,28 @@ export default function SourceCitation({ sources }: { sources: ChatSource[] }) {
   if (!sources.length) return null
 
   return (
-    <div className="mt-2 border border-gray-200 rounded-lg overflow-hidden text-sm">
+    <div className="mt-2 border border-purple-300 rounded-xl overflow-hidden text-sm">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between px-3 py-2 bg-gray-50 text-gray-600 hover:bg-gray-100 transition-colors"
+        className="w-full flex items-center justify-between px-3 py-2 bg-purple-200 text-purple-800 hover:bg-purple-300 transition-colors font-semibold"
       >
-        <span className="font-medium text-xs">
+        <span className="text-xs">
           {sources.length} source{sources.length > 1 ? "s" : ""}
         </span>
-        {open ? (
-          <ChevronUp className="w-3.5 h-3.5" />
-        ) : (
-          <ChevronDown className="w-3.5 h-3.5" />
-        )}
+        {open ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
       </button>
       {open && (
-        <div className="divide-y divide-gray-100">
+        <div className="divide-y divide-purple-200 bg-purple-50">
           {sources.map((s, i) => (
             <div key={i} className="px-3 py-2.5">
-              <div className="flex items-center gap-1.5 text-gray-700 font-medium text-xs mb-1">
-                <FileText className="w-3.5 h-3.5 text-gray-400 shrink-0" />
+              <div className="flex items-center gap-1.5 text-indigo-700 font-semibold text-xs mb-1">
+                <FileText className="w-3.5 h-3.5 text-rose-500 shrink-0" />
                 <span className="truncate">{s.document_name}</span>
                 {s.page_number && (
-                  <span className="text-gray-400 shrink-0">p.{s.page_number}</span>
+                  <span className="text-purple-500 shrink-0">p.{s.page_number}</span>
                 )}
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed line-clamp-3">
-                {s.excerpt}
-              </p>
+              <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">{s.excerpt}</p>
             </div>
           ))}
         </div>

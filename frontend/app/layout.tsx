@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} h-full`}>
-      <body className="h-full flex flex-col antialiased bg-gray-50">
+      <body className="h-full flex flex-col antialiased bg-gradient-to-br from-rose-100 via-purple-100 to-indigo-200">
         <Providers>
           <Navbar />
           <div className="flex flex-1 overflow-hidden">
