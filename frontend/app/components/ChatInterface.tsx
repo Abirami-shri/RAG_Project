@@ -175,6 +175,7 @@ export default function ChatInterface() {
           />
           <button
             type="submit"
+            aria-label="Send"
             disabled={streaming || !input.trim()}
             className="p-2.5 bg-blue-600 text-white rounded-xl hover:bg-blue-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0"
           >
